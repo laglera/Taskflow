@@ -29,9 +29,23 @@ function validarContraseña($pass) {
         return "DEBIL";
     }
 
-    $tieneMayuscula = preg_match('/[A-Z]/', $pass);
+    $tieneMayuscula = false;
+    $tieneNumero = false;
 
-    $tieneNumero = preg_match('/[0-9]/', $pass);
+    for ($i = 0; $i < strlen($pass); $i++) {
+        $char = $pass[$i];
+
+        if (ctype_upper($char)) {
+            $tieneMayuscula = true;
+        }
+
+        if (is_numeric($char)) {
+            $tieneNumero = true;
+        }
+        if ($tieneMayuscula && $tieneNumero) {
+            break;
+        }
+    }
 
     if ($tieneMayuscula && $tieneNumero) {
         return "FUERTE";
