@@ -54,6 +54,7 @@ function validarContraseña($pass) {
     }
 }
 
+
 function encontrarMaximo($array) {
     if (empty($array)) {
         return null;
