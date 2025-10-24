@@ -15,7 +15,7 @@ function obtenerClasePrioridad($prioridad) {
 
 function renderizarTarea($tarea) {
     $clasesTarea = 'task-item';
-    
+
     if ($tarea['completado']) {
         $clasesTarea .= ' completed';
     }
